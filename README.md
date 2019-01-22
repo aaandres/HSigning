@@ -18,7 +18,7 @@ restart 3dsMax, and you'll find the Geometry Object under the 'PathScritps' sect
 - This prototype version works with any type of shape but ONLY with its first spline.
 - For software creation, you can define position on creation or create the object and then assign the spline.
 
-If there's interest (I mean commercial interest), I'll develop the C# version for better performance with all missing features:
+If there's interest (I mean commercial interest), I'll develop the version with all missing features:
 
 - Work with multispline shapes.
 - Mapping coordinates.
