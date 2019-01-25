@@ -28,9 +28,9 @@ plugin simpleObject HSigning
 		spline			type:#node	  	ui:ui_spline
 		numSpline		type:#integer 		default:1		ui:ui_numSpline;
 		maxSplines		type:#integer 		default:1
-		pathLength		type:#worldUnits default:100.0
-		continuos 		type:#boolean 	default:off 		animatable:off 	ui:ui_continuos;
-		segLength		type:#worldUnits default:10.0 	ui:ui_segLength;
+		pathLength		type:#worldUnits 	default:100.0
+		continuos 		type:#boolean 		default:off 		animatable:off 	ui:ui_continuos;
+		segLength		type:#worldUnits 	default:10.0 		ui:ui_segLength;
    		width			type:#worldUnits 	default:1.0 		ui:ui_width;
    		stroke			type:#worldUnits 	default:10.0 		ui:ui_stroke;
    		gap			type:#worldUnits 	default:5.0		ui:ui_gap;
