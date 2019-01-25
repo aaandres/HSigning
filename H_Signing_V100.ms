@@ -1,6 +1,6 @@
 
 -- Horizontal Signing Lines
--- By AndrÈs Fern·ndez Cruz - PathScripts/Proin3D
+-- By Andr√©s Fern√°ndez Cruz - PathScripts/Proin3D
 -- January 2019
 /*
 	Create Horizontal Signing Lines based on picked/given spline.
@@ -25,29 +25,29 @@ plugin simpleObject HSigning
 (
    	parameters main rollout:params
    	(
-		spline				type:#node	  	ui:ui_spline
+		spline			type:#node	  	ui:ui_spline
 		numSpline		type:#integer 		default:1		ui:ui_numSpline;
 		maxSplines		type:#integer 		default:1
 		pathLength		type:#worldUnits default:100.0
 		continuos 		type:#boolean 	default:off 		animatable:off 	ui:ui_continuos;
 		segLength		type:#worldUnits default:10.0 	ui:ui_segLength;
-   		width				type:#worldUnits default:1.0 		ui:ui_width;
-   		stroke			type:#worldUnits default:10.0 	ui:ui_stroke;
-   		gap				type:#worldUnits default:5.0		ui:ui_gap;
+   		width			type:#worldUnits 	default:1.0 		ui:ui_width;
+   		stroke			type:#worldUnits 	default:10.0 		ui:ui_stroke;
+   		gap			type:#worldUnits 	default:5.0		ui:ui_gap;
    		wsegs			type:#integer 		default:1		ui:ui_wsegs;
    		stsegs			type:#integer	  	default:1 		ui:ui_stsegs;
-		PKStart	  		type:#worldUnits default:0.0		ui:ui_PKStart;
-		PKEnd	  		type:#worldUnits default:100.0	ui:ui_PKEnd;
-   		Hdist		  		type:#worldUnits default:0.0		ui:ui_Hdist;
-   		Vdist		  		type:#worldUnits default:0.0		ui:ui_Vdist;
+		PKStart	  		type:#worldUnits 	default:0.0		ui:ui_PKStart;
+		PKEnd	  		type:#worldUnits 	default:100.0		ui:ui_PKEnd;
+   		Hdist		  	type:#worldUnits 	default:0.0		ui:ui_Hdist;
+   		Vdist		  	type:#worldUnits 	default:0.0		ui:ui_Vdist;
 		numParallel		type:#integer 		default:1		ui:ui_numParallel;
-		HGap				type:#worldUnits default:5.0		ui:ui_parallelGap;
-   		thickness  		type:#float	  		default:0.0		ui:ui_thickness;
+		HGap			type:#worldUnits 	default:5.0		ui:ui_parallelGap;
+   		thickness  		type:#float	  	default:0.0		ui:ui_thickness;
 
-		forcePos			type:#boolean 	default:on 		animatable:off 	ui:ui_forcePos 
-   		bank 				type:#boolean 	default:off 		animatable:off 	ui:ui_bank 
-   		mapCoords 		type:#boolean 	default:off 		animatable:off 	ui:ui_mapCoords
-   		manualUpdate type:#boolean 	default:off 		animatable:off 	ui:ui_manualUpdate;
+		forcePos		type:#boolean 		default:on 		animatable:off 	ui:ui_forcePos 
+   		bank 			type:#boolean 		default:off 		animatable:off 	ui:ui_bank 
+   		mapCoords 		type:#boolean 		default:off 		animatable:off 	ui:ui_mapCoords
+   		manualUpdate 		type:#boolean 		default:off 		animatable:off 	ui:ui_manualUpdate;
 		superf			type:#node	  	ui:ui_surface
 		
 		
@@ -144,24 +144,24 @@ plugin simpleObject HSigning
 			
    		group "SplineShape: " 
    		(
-			pickbutton ui_spline "Select Path" filter:shape_filt  width:120 autoDisplay:true offset:[0,5];
-			spinner ui_numSpline   "Spline #:" range:[1, 1e5, 1] fieldwidth:64 type:#integer align:#right offset:[0,4];
-			checkbox ui_forcePos "Force to Line Position" align:#left offset:[-2,0]	enabled:true;
+			pickbutton ui_spline 	"Select Path" filter:shape_filt  width:120 autoDisplay:true offset:[0,5];
+			spinner ui_numSpline   	"Spline #:" range:[1, 1e5, 1] fieldwidth:64 type:#integer align:#right offset:[0,4];
+			checkbox ui_forcePos 	"Force to Line Position" align:#left offset:[-2,0]	enabled:true;
 		)
 		
    		group "Continuous: " 
    		(
-			checkbox ui_continuos "Continuous" align:#left offset:[-2,5];
+			checkbox ui_continuos 	"Continuous" align:#left offset:[-2,5];
 			spinner ui_segLength  	"Seg. Length:" range:[0.1, 1e9, 0] fieldwidth:64 type:#worldUnits align:#right offset:[0,5];
 		)
 			
    		group "Broken: "
    		(
 			spinner ui_stroke  	"Stroke:" range:[0, 1e9, 0] fieldwidth:64 type:#worldUnits align:#right offset:[0,5];
-			spinner ui_gap  		"Gap:" range:[0, 1e9, 0] fieldwidth:64 type:#worldUnits align:#right;
+			spinner ui_gap  	"Gap:" range:[0, 1e9, 0] fieldwidth:64 type:#worldUnits align:#right;
 			spinner ui_width   	"Width:" range:[0, 1e9, 0] fieldwidth:64 type:#worldUnits align:#right;
-			spinner ui_stsegs   "Stroke Segs:" range:[1, 1e5, 1] fieldwidth:64 type:#integer align:#right offset:[0,5];
-			spinner ui_wsegs   "Width Segs:" range:[1, 32, 1] fieldwidth:64 type:#integer align:#right;
+			spinner ui_stsegs   	"Stroke Segs:" range:[1, 1e5, 1] fieldwidth:64 type:#integer align:#right offset:[0,5];
+			spinner ui_wsegs   	"Width Segs:" range:[1, 32, 1] fieldwidth:64 type:#integer align:#right;
 		)
 		
    		group "Displacement: "
@@ -174,23 +174,23 @@ plugin simpleObject HSigning
 			
    		group "Parallel Lines: "
    		(
-			spinner ui_numParallel   "Number:" range:[1, 1e9, 2] fieldwidth:64 type:#integer align:#right	--enabled:false;
+			spinner ui_numParallel  "Number:" range:[1, 1e9, 2] fieldwidth:64 type:#integer align:#right	--enabled:false;
 			spinner ui_parallelGap  "Horiz. Gap:" range:[0, 1e9, 5.0] fieldwidth:64 type:#worldUnits align:#right	--enabled:false;
 		)
 		
    		group "Parameters: "
    		(
 			spinner ui_thickness	"Thickness:" range:[0, 1e9, 0] fieldwidth:64 type:#float align:#right;
-			checkbox ui_bank "bank" align:#left offset:[-2,4]	enabled:false;
-			checkbox ui_mapCoords "Generate Map Coords." align:#left	enabled:false;
-			label lb10 "Glue to Surface:" align:#left	 offset:[0,4]	enabled:false;
-			pickbutton ui_surface "Select Surface" filter:geometry_filt  width:120 autoDisplay:true 	enabled:false;
+			checkbox ui_bank 	"bank" align:#left offset:[-2,4]	enabled:false;
+			checkbox ui_mapCoords 	"Generate Map Coords." align:#left	enabled:false;
+			label lb10 		"Glue to Surface:" align:#left	 offset:[0,4]	enabled:false;
+			pickbutton ui_surface 	"Select Surface" filter:geometry_filt  width:120 autoDisplay:true 	enabled:false;
 		)
 		
    		group "Update: "
    		(
-   			checkbox ui_manualUpdate "Manual Update" align:#left offset:[-2,0]
-   			button ui_update "Update" width:71 align:#center offset:[-4,0] tooltip:"Update" --across:2
+   			checkbox ui_manualUpdate 	"Manual Update" align:#left offset:[-2,0]
+   			button ui_update 		"Update" width:71 align:#center offset:[-4,0] tooltip:"Update" --across:2
    		)
 		
 		edittext email text:"pathscripts@proin3d.org" fieldWidth:148 height:16 bold:true readOnly:true offset:[-10,0]
