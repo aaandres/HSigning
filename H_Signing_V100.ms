@@ -1,6 +1,6 @@
 
 -- Horizontal Signing Lines
--- By AndrÈs Fern·ndez Cruz - PathScripts/Proin3D
+-- By Andr√©s Fern√°ndez Cruz - PathScripts/Proin3D
 -- January 2019
 /*
 	Create Horizontal Signing Lines based on picked/given spline.
@@ -25,29 +25,29 @@ plugin simpleObject HSigning
 (
    	parameters main rollout:params
    	(
-		spline				type:#node	  	ui:ui_spline
+		spline			type:#node	  	ui:ui_spline
 		numSpline		type:#integer 		default:1		ui:ui_numSpline;
 		maxSplines		type:#integer 		default:1
-		pathLength		type:#worldUnits default:100.0
-		continuos 		type:#boolean 	default:off 		animatable:off 	ui:ui_continuos;
-		segLength		type:#worldUnits default:10.0 	ui:ui_segLength;
-   		width				type:#worldUnits default:1.0 		ui:ui_width;
-   		stroke			type:#worldUnits default:10.0 	ui:ui_stroke;
-   		gap				type:#worldUnits default:5.0		ui:ui_gap;
+		pathLength		type:#worldUnits 	default:100.0
+		continuos 		type:#boolean 		default:off 		animatable:off 	ui:ui_continuos;
+		segLength		type:#worldUnits 	default:10.0 		ui:ui_segLength;
+   		width			type:#worldUnits 	default:1.0 		ui:ui_width;
+   		stroke			type:#worldUnits 	default:10.0 		ui:ui_stroke;
+   		gap			type:#worldUnits 	default:5.0		ui:ui_gap;
    		wsegs			type:#integer 		default:1		ui:ui_wsegs;
    		stsegs			type:#integer	  	default:1 		ui:ui_stsegs;
-		PKStart	  		type:#worldUnits default:0.0		ui:ui_PKStart;
-		PKEnd	  		type:#worldUnits default:100.0	ui:ui_PKEnd;
-   		Hdist		  		type:#worldUnits default:0.0		ui:ui_Hdist;
-   		Vdist		  		type:#worldUnits default:0.0		ui:ui_Vdist;
+		PKStart	  		type:#worldUnits 	default:0.0		ui:ui_PKStart;
+		PKEnd	  		type:#worldUnits 	default:100.0		ui:ui_PKEnd;
+   		Hdist		  	type:#worldUnits 	default:0.0		ui:ui_Hdist;
+   		Vdist		  	type:#worldUnits 	default:0.0		ui:ui_Vdist;
 		numParallel		type:#integer 		default:1		ui:ui_numParallel;
-		HGap				type:#worldUnits default:5.0		ui:ui_parallelGap;
-   		thickness  		type:#float	  		default:0.0		ui:ui_thickness;
+		HGap			type:#worldUnits 	default:5.0		ui:ui_parallelGap;
+   		thickness  		type:#float	  	default:0.0		ui:ui_thickness;
 
-		forcePos			type:#boolean 	default:on 		animatable:off 	ui:ui_forcePos 
-   		bank 				type:#boolean 	default:off 		animatable:off 	ui:ui_bank 
-   		mapCoords 		type:#boolean 	default:off 		animatable:off 	ui:ui_mapCoords
-   		manualUpdate type:#boolean 	default:off 		animatable:off 	ui:ui_manualUpdate;
+		forcePos		type:#boolean 		default:on 		animatable:off 	ui:ui_forcePos 
+   		bank 			type:#boolean 		default:off 		animatable:off 	ui:ui_bank 
+   		mapCoords 		type:#boolean 		default:off 		animatable:off 	ui:ui_mapCoords
+   		manualUpdate 		type:#boolean 		default:off 		animatable:off 	ui:ui_manualUpdate;
 		superf			type:#node	  	ui:ui_surface
 		
 		
@@ -247,8 +247,8 @@ plugin simpleObject HSigning
 					
 					local AutoCross, AutoCrossDir;
 					local AutoCrossChanged = false;
-					AutoCross = getINISetting (getMAXIniFile()) #Performance #AutoCross	--	0
-					AutoCrossDir = getINISetting (getMAXIniFile()) #Performance #AutoCrossDir	--	0
+					AutoCross = getINISetting (getMAXIniFile()) #Performance #AutoCross	
+					AutoCrossDir = getINISetting (getMAXIniFile()) #Performance #AutoCrossDir	
 					if AutoCross != "0" or AutoCrossDir != "0" do
 					(
 						AutoCrossChanged = true
@@ -377,7 +377,7 @@ plugin simpleObject HSigning
 			wsegs_x2 = wsegs * 2;
 			numHVerts = wsegsII * numParallel;
 			nverts = (stsegsII + 1) * numHVerts;		-- Base number, not total number
-			nfaces = stsegsII * wsegs_x2 * numParallel;					-- Base number, not total number
+			nfaces = stsegsII * wsegs_x2 * numParallel;	-- Base number, not total number
 				
 			setNumVerts mesh (nverts * numElements);
 			setNumFaces mesh (nfaces * numElements);
